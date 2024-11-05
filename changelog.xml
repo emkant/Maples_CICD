@@ -1,0 +1,29 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="vamsikrishna (generated)" id="1730806245648-1">
+        <createTable tableName="NEW_TABLE">
+            <column name="ID" type="VARCHAR2(130 CHAR)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vamsikrishna (generated)" id="1730806245648-2">
+        <createTable tableName="NEW_TABLE_GEN">
+            <column name="ID" type="NUMBER"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vamsikrishna (generated)" id="1730806245648-3">
+        <createTable tableName="TEST">
+            <column autoIncrement="true" defaultOnNull="true" generationType="BY DEFAULT" name="ID" type="NUMBER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="TEST_PK"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="vamsikrishna (generated)" id="1730806245648-4">
+        <dropView viewName="DATABASECHANGELOG_DETAILS"/>
+    </changeSet>
+    <changeSet author="vamsikrishna (generated)" id="1730806245648-5">
+        <dropTable tableName="DATABASECHANGELOG_ACTIONS"/>
+    </changeSet>
+    <changeSet author="vamsikrishna (generated)" id="1730806245648-6">
+        <dropTable tableName="NEW_TABLE_GEN2"/>
+    </changeSet>
+</databaseChangeLog>

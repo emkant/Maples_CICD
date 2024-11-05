@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="6deba6d2e3a98c6586ec3c2b8db37556063d20d5" author="(MAPLESDEV)-Generated" failOnError="true"   runOnChange="false" runAlways="false"  >
+		<n0:createOracleComment objectName="LOAD_NARRATIVES_ERR$" objectType="COMMENT" ownerName="MAPLESDEV" sourceType="STRING" replaceIfExists="false" >
+			<n0:source><![CDATA[
+   COMMENT ON TABLE "LOAD_NARRATIVES_ERR$"  IS 'DML Error Logging table for "LOAD_NARRATIVES"';]]></n0:source>
+		</n0:createOracleComment>
+	</changeSet>
+</databaseChangeLog>

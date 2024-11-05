@@ -1,0 +1,15 @@
+[2024-11-05 16:23:40] INFO [oracle.dbtools.raptor.scriptrunner.commands.liquibase.LbCommand handleEvent] Starting LB command: DIFF
+[2024-11-05 16:23:40] FINE [liquibase.configuration] Configuration liquibase.command.DIFF.skipDatabaseStep is using the default value of false
+[2024-11-05 16:23:40] FINE [liquibase.configuration] Configuration liquibase.command.skipDatabaseStep is using the default value of false
+[2024-11-05 16:23:40] FINE [liquibase.command] Pipeline for command 'DIFF: liquibase.command.core.helpers.DbUrlConnectionCommandStep then liquibase.command.core.helpers.ReferenceDbUrlConnectionCommandStep then liquibase.command.core.helpers.PreCompareCommandStep then liquibase.command.core.DiffCommandStep
+[2024-11-05 16:23:40] FINE [liquibase.command] Writing output with encoding 'UTF-8'
+[2024-11-05 16:23:40] FINE [liquibase.command] Executing internal command dbUrlConnectionCommandStep
+[2024-11-05 16:23:40] FINE [liquibase.configuration] Configuration liquibase.command.DIFF.skipDatabaseStep is using the default value of false
+[2024-11-05 16:23:40] FINE [liquibase.configuration] Configuration liquibase.command.skipDatabaseStep is using the default value of false
+[2024-11-05 16:23:40] FINE [liquibase.command] Executing internal command referenceDbUrlConnectionCommandStep
+[2024-11-05 16:23:40] FINE [liquibase.database] Properties:
+[2024-11-05 16:23:40] FINE [liquibase.database] Key:'password' Value:'**********'
+[2024-11-05 16:23:40] FINE [liquibase.database] Key:'user' Value:'WKSP_FRONGPMSTDEV'
+[2024-11-05 16:23:40] FINE [liquibase.database] Connecting to the URL:'jdbc:oracle:thin:@//adb.us-ashburn-1.oraclecloud.com:1522/g15d023dedae272_fronteragpmsdev_high.adb.oraclecloud.com' using driver:'oracle.jdbc.OracleDriver'
+[2024-11-05 16:23:41] INFO [liquibase.command] Command execution complete
+[2024-11-05 16:23:41] INFO [oracle.dbtools.raptor.scriptrunner.commands.liquibase.LbCommand handleEvent] Logging Ended

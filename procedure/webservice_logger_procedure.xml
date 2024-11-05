@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="e1807bf2874443e4399bbeda0c40856ac3662326" author="(MAPLESDEV)-Generated" failOnError="true"   runOnChange="false" runAlways="false"  >
+		<n0:createOracleProcedure objectName="WEBSERVICE_LOGGER" objectType="PROCEDURE" ownerName="MAPLESDEV"  replaceIfExists="false" >
+			<n0:source><![CDATA[CREATE OR REPLACE EDITIONABLE PROCEDURE "%USER_NAME%"."WEBSERVICE_LOGGER" (P_URL VARCHAR2,P_REQUEST CLOB,P_RESPONSE CLOB,P_RESPONSE_CODE NUMBER)
+IS
+  PRAGMA AUTONOMOUS_TRANSACTION;
+BEGIN
+  INSERT INTO WEBSERVICE_LOG(URL,REQUEST,RESPONSE,RESPONSE_CODE) VALUES (P_URL,P_REQUEST,P_RESPONSE,P_RESPONSE_CODE);
+  COMMIT;
+END;
+/]]></n0:source>
+		</n0:createOracleProcedure>
+	</changeSet>
+</databaseChangeLog>

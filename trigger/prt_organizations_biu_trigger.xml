@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="0426831984bfd8c26cc626303462ca358b5e1333" author="(MAPLESDEV)-Generated" failOnError="true"   runOnChange="false" runAlways="false"  >
+		<n0:createOracleTrigger objectName="PRT_ORGANIZATIONS_BIU" objectType="TRIGGER" ownerName="MAPLESDEV"  replaceIfExists="false" >
+			<n0:source><![CDATA[CREATE OR REPLACE EDITIONABLE TRIGGER "%USER_NAME%"."PRT_ORGANIZATIONS_BIU" 
+BEFORE INSERT OR UPDATE ON prt_organizations FOR EACH ROW 
+BEGIN 
+  IF INSERTING THEN 
+    :new.created_by         := nvl(v('APP_USER'),USER); 
+    :new.creation_date      := SYSTIMESTAMP; 
+  END IF; 
+  :new.last_updated_by    := nvl(v('APP_USER'),USER); 
+  :new.last_update_date   := SYSTIMESTAMP; 
+END;
+/
+]]></n0:source>
+		</n0:createOracleTrigger>
+	</changeSet>
+</databaseChangeLog>

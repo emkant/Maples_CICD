@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+-->
+<databaseChangeLog 
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  <include file="sequence/xxgpms_trans_seq_sequence.xml"/> 
+  <include file="table/axgpms_expenses_table.xml"/> 
+  <include file="table/axgpms_project_table.xml"/> 
+  <include file="table/axxml_tab_table.xml"/> 
+  <include file="table/gpms_profile_options_table.xml"/> 
+  <include file="table/htmldb_plan_table_table.xml"/> 
+  <include file="table/load_narratives_table.xml"/> 
+  <include file="table/load_narratives_err$_table.xml"/> 
+  <include file="table/ma_approval_invoices_table.xml"/> 
+  <include file="table/new_table_table.xml"/> 
+  <include file="table/new_table_gen_table.xml"/> 
+  <include file="table/progress_bar_entries_table.xml"/> 
+  <include file="table/progress_entries_table.xml"/> 
+  <include file="table/prt_environments_table.xml"/> 
+  <include file="table/prt_environments_err$_table.xml"/> 
+  <include file="table/prt_organizations_table.xml"/> 
+  <include file="table/spell_check_table.xml"/> 
+  <include file="table/spell_checker_dtl_table.xml"/> 
+  <include file="table/spell_check_exceptions_table.xml"/> 
+  <include file="table/test_table.xml"/> 
+  <include file="table/webservice_config_table.xml"/> 
+  <include file="table/webservice_log_table.xml"/> 
+  <include file="table/wip_logger_table.xml"/> 
+  <include file="table/xxgpms_bill_lines_table.xml"/> 
+  <include file="table/xxgpms_exp_types_table.xml"/> 
+  <include file="table/xxgpms_interprojects_table.xml"/> 
+  <include file="table/xxgpms_job_logs_table.xml"/> 
+  <include file="table/xxgpms_matter_credits_table.xml"/> 
+  <include file="table/xxgpms_projects_table.xml"/> 
+  <include file="table/xxgpms_project_contract_table.xml"/> 
+  <include file="table/xxgpms_project_costs_table.xml"/> 
+  <include file="table/xxgpms_project_costs_tmp_table.xml"/> 
+  <include file="table/xxgpms_project_events_table.xml"/> 
+  <include file="table/xxgpms_project_invoices_table.xml"/> 
+  <include file="table/xxgpms_project_invoice_history_table.xml"/> 
+  <include file="table/xxgpms_project_rates_table.xml"/> 
+  <include file="table/xxgpms_project_split_table.xml"/> 
+  <include file="table/xxgpms_project_wip_category_table.xml"/> 
+  <include file="table/xxgpms_users_table.xml"/> 
+  <include file="table/xxgpms_user_roles_table.xml"/> 
+  <include file="ref_constraint/prt_environments_fk1_ref_constraint.xml"/> 
+  <include file="package_spec/ma_util_package_spec.xml"/> 
+  <include file="package_spec/xx_gpms_package_spec.xml"/> 
+  <include file="function/get_currency_function.xml"/> 
+  <include file="procedure/apex_proc_poc_procedure.xml"/> 
+  <include file="procedure/proc_update_status_procedure.xml"/> 
+  <include file="procedure/progress_entries_logger_procedure.xml"/> 
+  <include file="procedure/test_rest_procedure.xml"/> 
+  <include file="procedure/update_narratives_procedure.xml"/> 
+  <include file="procedure/webservice_logger_procedure.xml"/> 
+  <include file="procedure/wip_logger_proc_procedure.xml"/> 
+  <include file="procedure/wip_tag_proc_procedure.xml"/> 
+  <include file="procedure/xx_jwt_username_procedure.xml"/> 
+  <include file="procedure/xx_jwt_username1_procedure.xml"/> 
+  <include file="index/progress_bar_entries_con_index.xml"/> 
+  <include file="index/prt_environments_u1_index.xml"/> 
+  <include file="index/prt_organizations_u1_index.xml"/> 
+  <include file="trigger/prt_environments_biu_trigger.xml"/> 
+  <include file="trigger/prt_organizations_biu_trigger.xml"/> 
+  <include file="package_body/ma_util_package_body.xml"/> 
+  <include file="package_body/xx_gpms_package_body.xml"/> 
+  <include file="comment/load_narratives_err$_comment.xml"/> 
+</databaseChangeLog> 

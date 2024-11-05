@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="1de504dc036cf9a07b4387f314e035f0a8ff931b" author="(MAPLESDEV)-Generated" failOnError="true"   runOnChange="false" runAlways="false"  >
+		<n0:createOraclePackageSpec objectName="MA_UTIL" objectType="PACKAGE_SPEC" ownerName="MAPLESDEV"  replaceIfExists="false" >
+			<n0:source><![CDATA[CREATE OR REPLACE EDITIONABLE PACKAGE "%USER_NAME%"."MA_UTIL" as
+  procedure fetch_invoices;
+  PROCEDURE WEBSERVICE_CALL(P_WEB_SERVICE_TYPE VARCHAR2,P_REQUEST CLOB,P_RESPONSE_CODE OUT NUMBER,P_RESPONSE OUT CLOB);
+  PROCEDURE MASS_APPROVE_INVOICES (P_TASK_NUMBERS VARCHAR2,P_RESPONSE CLOB);
+  PROCEDURE MASS_REJECT_INVOICES (P_TASK_NUMBERS VARCHAR2,P_JUSTIFICATION VARCHAR2,P_RESPONSE CLOB);
+end "MA_UTIL";
+/]]></n0:source>
+		</n0:createOraclePackageSpec>
+	</changeSet>
+</databaseChangeLog>

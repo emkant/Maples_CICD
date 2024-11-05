@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="4ac86ef2eb347f7f04d57966b00cc0e1ebc18629" author="(MAPLESDEV)-Generated" failOnError="true"   runOnChange="false" runAlways="false"  >
+		<n0:createOracleRefConstraint objectName="PRT_ENVIRONMENTS_FK1" objectType="REF_CONSTRAINT" ownerName="MAPLESDEV"  replaceIfExists="false" >
+			<n0:source><![CDATA[ALTER TABLE "%USER_NAME%"."PRT_ENVIRONMENTS" ADD CONSTRAINT "PRT_ENVIRONMENTS_FK1" FOREIGN KEY ("ORGANIZATION_ID")
+	  REFERENCES "%USER_NAME%"."PRT_ORGANIZATIONS" ("ORGANIZATION_ID") ON DELETE CASCADE ENABLE;]]></n0:source>
+		</n0:createOracleRefConstraint>
+	</changeSet>
+</databaseChangeLog>

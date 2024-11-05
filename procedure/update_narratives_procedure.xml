@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="87d23b4578619adc68a0d4065192ee3c7dc9fcf0" author="(MAPLESDEV)-Generated" failOnError="true"   runOnChange="false" runAlways="false"  >
+		<n0:createOracleProcedure objectName="UPDATE_NARRATIVES" objectType="PROCEDURE" ownerName="MAPLESDEV"  replaceIfExists="false" >
+			<n0:source><![CDATA[CREATE OR REPLACE EDITIONABLE PROCEDURE "%USER_NAME%"."UPDATE_NARRATIVES" 
+AS 
+L_URL                        VARCHAR2(4000);
+  INSTANCE_URL VARCHAR2(200);
+    L_VERSION                    VARCHAR2(10);
+    L_RESPONSE_CLOB              CLOB;
+    L_ENVELOPE                   VARCHAR2(32000);
+        V_STATUSCODE                 NUMBER;
+BEGIN
+  SELECT
+    BASE_URL INTO INSTANCE_URL
+  FROM
+    PRT_ENVIRONMENTS
+  WHERE
+    ORGANIZATION_ID IN (
+      SELECT
+        ORGANIZATION_ID
+      FROM
+        PRT_ORGANIZATIONS
+      WHERE
+        UPPER(ORGANIZATION_NAME) = 'DEV'
+    )
+    AND UPPER(ENVIRONMENT_NAME) = 'DEV';
+  FOR I IN (SELECT * FROM LOAD_NARRATIVES-- WHERE EXPENDITURE_ITEM_ID = 527257
+  )
+  LOOP
+    L_URL := INSTANCE_URL
+             || '/fscmRestApi/resources/11.13.18.05/projectExpenditureItems/'
+             || I.EXPENDITURE_ITEM_ID
+             || '/child/ProjectExpenditureItemsDFF/'
+             || I.EXPENDITURE_ITEM_ID;
+    L_ENVELOPE := '{"narrativeBillingOverflow1" : "'
+                  || I.INVOICE_NARRATIVE
+                   ||'"
+                   }';             
+     APEX_WEB_SERVICE.G_REQUEST_HEADERS (1).NAME := 'Content-Type';
+    APEX_WEB_SERVICE.G_REQUEST_HEADERS (1).VALUE := 'application/json';
+    L_RESPONSE_CLOB := APEX_WEB_SERVICE.MAKE_REST_REQUEST ( P_URL => L_URL, P_HTTP_METHOD => 'PATCH',
+ p_username => 'AMY.MARLIN',
+ p_password => 'F8*xe7?M',
+ -- P_CREDENTIAL_STATIC_ID => 'GPMS_DEV',
+    -- P_SCHEME => 'OAUTH_CLIENT_CRED',
+     P_BODY => L_ENVELOPE );
+    V_STATUSCODE := APEX_WEB_SERVICE.G_STATUS_CODE;    
+    -- XX_GPMS.WIP_DEBUG (2, 7777, '', V_STATUSCODE||' '||I.EXPENDITURE_ITEM_ID);   
+        DBMS_OUTPUT.PUT_LINE(L_URL);        
+    DBMS_OUTPUT.PUT_LINE(L_ENVELOPE);    
+  END LOOP;
+ END;
+/]]></n0:source>
+		</n0:createOracleProcedure>
+	</changeSet>
+</databaseChangeLog>

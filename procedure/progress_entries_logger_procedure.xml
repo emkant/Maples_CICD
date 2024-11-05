@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="76a1c5bdbf0948f089fa8dc4d1b144abb7192873" author="(MAPLESDEV)-Generated" failOnError="true"   runOnChange="false" runAlways="false"  >
+		<n0:createOracleProcedure objectName="PROGRESS_ENTRIES_LOGGER" objectType="PROCEDURE" ownerName="MAPLESDEV"  replaceIfExists="false" >
+			<n0:source><![CDATA[CREATE OR REPLACE EDITIONABLE PROCEDURE "%USER_NAME%"."PROGRESS_ENTRIES_LOGGER" 
+(p_percentage in number,
+p_message in varchar2)
+is
+pragma autonomous_transaction;
+begin
+insert into progress_entries (percentage,message,created_date) values (p_percentage,p_message,systimestamp);
+commit;
+end;
+/]]></n0:source>
+		</n0:createOracleProcedure>
+	</changeSet>
+</databaseChangeLog>

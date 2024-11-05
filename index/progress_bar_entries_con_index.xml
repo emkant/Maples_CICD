@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="a70ff340e19a6e674225aeaca60be848a44a8849" author="(MAPLESDEV)-Generated" failOnError="true"   runOnChange="false" runAlways="false"  >
+		<n0:createSxmlObject objectName="PROGRESS_BAR_ENTRIES_CON" objectType="INDEX" ownerName="MAPLESDEV"  replaceIfExists="false" >
+			<n0:source><![CDATA[
+  <INDEX xmlns="http://xmlns.oracle.com/ku" version="1.0">
+   <UNIQUE></UNIQUE>
+   <SCHEMA>%USER_NAME%</SCHEMA>
+   <NAME>PROGRESS_BAR_ENTRIES_CON</NAME>
+   <TABLE_INDEX>
+      <ON_TABLE>
+         <SCHEMA>%USER_NAME%</SCHEMA>
+         <NAME>PROGRESS_BAR_ENTRIES</NAME>
+      </ON_TABLE>
+      <COL_LIST>
+         <COL_LIST_ITEM>
+            <NAME>SEQ</NAME>
+         </COL_LIST_ITEM>
+         <COL_LIST_ITEM>
+            <NAME>MODULE</NAME>
+         </COL_LIST_ITEM>
+      </COL_LIST>
+      <INDEX_ATTRIBUTES>
+         <PCTFREE>10</PCTFREE>
+         <INITRANS>20</INITRANS>
+         <MAXTRANS>255</MAXTRANS>
+         <TABLESPACE>DATA</TABLESPACE>
+         <LOGGING>Y</LOGGING>
+      </INDEX_ATTRIBUTES>
+   </TABLE_INDEX>
+</INDEX>]]></n0:source>
+		</n0:createSxmlObject>
+	</changeSet>
+</databaseChangeLog>

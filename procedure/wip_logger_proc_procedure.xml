@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="62cec6124de50a686324a066052f2c3b22b67366" author="(MAPLESDEV)-Generated" failOnError="true"   runOnChange="false" runAlways="false"  >
+		<n0:createOracleProcedure objectName="WIP_LOGGER_PROC" objectType="PROCEDURE" ownerName="MAPLESDEV"  replaceIfExists="false" >
+			<n0:source><![CDATA[CREATE OR REPLACE EDITIONABLE PROCEDURE "%USER_NAME%"."WIP_LOGGER_PROC" (P_MESSAGE_VC IN VARCHAR2 DEFAULT NULL,
+P_MESSAGE_CLOB IN VARCHAR2 DEFAULT NULL)
+IS 
+PRAGMA AUTONOMOUS_TRANSACTION;
+BEGIN
+  INSERT INTO WIP_LOGGER(MESSAGE_VC,MESSAGE_CLOB)
+  VALUES (P_MESSAGE_VC,P_MESSAGE_CLOB);
+  COMMIT;
+END;
+/]]></n0:source>
+		</n0:createOracleProcedure>
+	</changeSet>
+</databaseChangeLog>

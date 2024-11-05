@@ -1,0 +1,2 @@
+
+   COMMENT ON TABLE "LOAD_NARRATIVES_ERR$"  IS 'DML Error Logging table for "LOAD_NARRATIVES"';

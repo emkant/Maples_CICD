@@ -1,0 +1,3 @@
+[2024-11-05 16:23:32] INFO [oracle.dbtools.raptor.scriptrunner.commands.liquibase.LbCommand handleEvent] Starting LB command: DIFF
+[2024-11-05 16:23:33] INFO [liquibase.command] Command execution complete
+[2024-11-05 16:23:33] INFO [oracle.dbtools.raptor.scriptrunner.commands.liquibase.LbCommand handleEvent] Logging Ended

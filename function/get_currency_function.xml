@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="246c1a5227e9a2944538f762b523f1e638ae37c1" author="(MAPLESDEV)-Generated" failOnError="true"   runOnChange="false" runAlways="false"  >
+		<n0:createOracleFunction objectName="GET_CURRENCY" objectType="FUNCTION" ownerName="MAPLESDEV"  replaceIfExists="false" >
+			<n0:source><![CDATA[CREATE OR REPLACE EDITIONABLE FUNCTION "%USER_NAME%"."GET_CURRENCY" (p_currency_code in varchar2)
+return varchar2 
+is 
+  v_currency varchar2(1000);
+begin
+  select case p_currency_code 
+  when  'USD' then  '$' 
+  when    'EUR' then  '€' 
+  when    'CRC' then  '₡' 
+  when    'GBP' then  '£' 
+  when    'ILS' then  '₪' 
+  when    'INR' then  '₹' 
+  when    'JPY' then  '¥' 
+  when    'KRW' then  '₩' 
+  when    'NGN' then  '₦' 
+  when    'PHP' then  '₱' 
+  when    'PLN' then  'zł'
+  when    'PYG' then  '₲'
+  when    'THB' then  '฿'
+  when    'UAH' then  '₴' 
+  when    'VND' then  '₫'
+   end cur 
+   into v_currency
+   from dual;
+   return v_currency;
+ end;
+/]]></n0:source>
+		</n0:createOracleFunction>
+	</changeSet>
+</databaseChangeLog>
